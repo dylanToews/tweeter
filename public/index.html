@@ -30,13 +30,15 @@
 
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
+  <link rel="stylesheet" href="/styles/all-tweets.css" type="text/css" />
+
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
- 
-     
+
+
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 </head>
 
@@ -66,26 +68,44 @@
   <main class="container">
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      
-    
       <form class="title-input" method="POST" action="/tweets/">
-        <label for="tweet-text">What are you humming about?</label>         
+        <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
- 
-    
-        
         <div class="button-counter">
-
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
-
         </div>
-
       </form>
     </section>
+    <section class="all-tweets">
+      <article class="tweets-article">
+
+        <header class = "article-header">
+          <div class = 'img-name'>
+          <img src="/images/profile-hex.png">
+          <h3>Namey McName</h3>
+        </div>
+          <p id="profile-tag">@profilename</p>
+        </header>
+
+        <div class = "tweet-content">
+          <p>Some original and important message goes here</p>
+        </div>
+
+        <hr />
+
+        <footer>
+          <p>10 Days Ago</p>
+          <p id="tweet-icons"> 
+            <i class="fa-solid fa-flag"></i> 
+            <i class="fa-regular fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </p>
+        </footer>
+      </article>
+    </section>
+
   </main>
-  <footer>
-  </footer>
 
 </body>
 

@@ -20,11 +20,13 @@ label {
 }
 .button-counter {
   display: flex;
-  border-top:#FFFFFF, 10px;
+  border-top: solid 5px;
   flex-direction: row;
   justify-content: space-between;
   font-family: 'Bungee', cursive;
   margin-top: 25px;
+  padding-top: 25px;
+  margin-bottom: 25px;
 }
 button {
   background-color: #4056A1;

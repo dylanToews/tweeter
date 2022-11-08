@@ -1,0 +1,77 @@
+.tweets-article {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid;
+  color: #191816;
+  background-color: #3cc4d6;
+  background-image: url("https://www.transparenttextures.com/patterns/cardboard-flat.png");
+}
+
+.article-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  
+}
+
+.img-name {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 25px;
+  
+
+}
+
+.img-name img {
+  height: 75px;
+  margin-right: 10px;
+}
+
+hr {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  size: 10px;
+
+  
+}
+
+
+.article-header p {
+  margin-right: 25px;
+  /* padding-right: 25ps; */
+  font-size:25px;
+  font-weight:bold
+}
+
+.tweet-content {
+  margin-left: 25px;
+}
+
+footer  {
+  display: flex;
+  flex-direction: row;  
+  justify-content: space-between;
+  margin: 10px 10px
+}
+
+
+
+.fa-flag:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+  color:  rgb(51, 69, 129)
+}
+
+.fa-retweet:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+  color:  rgb(51, 69, 129)
+}
+
+.fa-heart:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+  color:  rgb(51, 69, 129)
+}
+
