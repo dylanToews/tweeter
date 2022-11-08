@@ -1,0 +1,33 @@
+/* Layout for tweet form and button */
+
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  width: 100%
+}
+
+.title-input {
+  display:flex;
+  flex-direction: column;
+ border-bottom: #FFFFFF
+}
+
+
+label {
+
+  margin-bottom: 15px;
+ 
+}
+.button-counter {
+  display: flex;
+  border-top: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+  margin-top: 25px;
+}
+button {
+  background-color: #4056A1;
+  font-size: smaller;
+  color: #FFFFFF;
+}

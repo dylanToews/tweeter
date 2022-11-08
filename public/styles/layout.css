@@ -29,13 +29,17 @@ body {
 
 main {
   display: flex;
+  flex-direction: column;
   width: 90%;
   height: auto;
 
 
 }
 
+footer {
+  margin-top: 25px;
 
+}
 /* font-family: 'Source Sans Pro', sans-serif; 
   font-family: 'Bungee', cursive;
   Note: the Bungee font should apply to the Tweeter logo in the nav).*/
