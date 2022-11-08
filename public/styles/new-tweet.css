@@ -20,7 +20,7 @@ label {
 }
 .button-counter {
   display: flex;
-  border-top: 10px;
+  border-top:#FFFFFF, 10px;
   flex-direction: row;
   justify-content: space-between;
   font-family: 'Bungee', cursive;
@@ -30,4 +30,10 @@ button {
   background-color: #4056A1;
   font-size: smaller;
   color: #FFFFFF;
+}
+
+.counter {
+  display: flex;
+
+
 }

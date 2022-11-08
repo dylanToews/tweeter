@@ -11,7 +11,15 @@ $(document).ready(function() {
     let content = event.target.value;
     console.log(content);
     console.log(content.length);
-    $('.counter').val(140 - content.length)  
+    $('.counter').val(140 - content.length);
+
+    if ($('.counter').val() < 0) {
+      $('.counter').css("color", "red");
+    }
+    if ($('.counter').val() > 0) {
+      $('.counter').css("color", "rgb(182, 176, 167)");
+    }
+  
     
   });
 
