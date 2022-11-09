@@ -47,7 +47,7 @@ $(document).ready(function() {
     <article class="tweets-article">
         <header class="article-header">
           <div class='img-name'>
-            <img src="/images/profile-hex.png">
+            <img src=${tweetData.user.avatars}>
             <p id="user-name">${tweetData.user.name}</p>
           </div>
           <p id="profile-tag">${tweetData.user.handle}</p>
@@ -65,30 +65,25 @@ $(document).ready(function() {
           </p>
         </footer>
       </article>
-    `
+    `;
 
-    return output
-
-    // $('#user-name').append(tweetData.user.name);
-    // $('#profile-tag').append(tweetData.user.handle);
-    // $('#content-text').append(tweetData.content.text);
-    // $('.date-created ').append(`${difference} days ago`);
+    return output;
 
   };
 
 
 
-  const tweetData = {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  };
+  // const tweetData = {
+  //   "user": {
+  //     "name": "Newton",
+  //     "avatars": "https://i.imgur.com/73hZDYK.png",
+  //     "handle": "@SirIsaac"
+  //   },
+  //   "content": {
+  //     "text": "If I have seen further it is by standing on the shoulders of giants"
+  //   },
+  //   "created_at": 1461116232227
+  // };
 
   const data = [
     {
@@ -117,6 +112,24 @@ $(document).ready(function() {
   ];
 
 
+  $('.title-input').on('submit', function(event) {
+    event.preventDefault();
+
+    console.log(event);
+
+
+    $.ajax('/tweets', { method: 'POST', data: $(this).serialize() });
+    
+    // $.ajax({
+
+    //   method: 'POST'
+    //   // data : event.serialize()
+    // })
+
+
+  });
+
+
 
 
   const renderTweets = function(tweets) {
@@ -128,17 +141,6 @@ $(document).ready(function() {
   };
 
   renderTweets(data);
-
-
-  // const $tweet = createTweetElement(tweetData);
-
-  // Test / driver code (temporary)
-
-
-  //console.log($tweet); // to see what it looks like
-
-//$('.all-tweets').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-
 
 
 
