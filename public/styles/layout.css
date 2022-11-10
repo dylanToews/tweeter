@@ -34,7 +34,6 @@ body {
   width: 100%
 }
 
-
 main {
   display: flex;
   flex-direction: column;
@@ -65,9 +64,9 @@ main {
     background-color: none;
     background-image: none;
   }
-
  }
 
+ /* Desktop breakpoint */
  @media screen and (max-width: 767px) {
   .tweets-article{
   background-color: #3cc4d6;

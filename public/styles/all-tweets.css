@@ -4,11 +4,10 @@
   border: 5px solid;
   color: #191816;
   margin-bottom: 10px;
- 
 }
+
 .tweets-article:hover {
   box-shadow: 0 0 11px blue;
-
 }
 
 .article-header {
@@ -17,17 +16,13 @@
   justify-content: space-between;
   width: 100%;
   height: auto;
-  
 }
-
 
 .img-name {
   display:flex;
   flex-direction: row;
   align-items: center;
   margin-left: 25px;
-  
-
 }
 
 .img-name img {
@@ -39,7 +34,6 @@
 
 .article-header p {
   margin-right: 25px;
-  /* padding-right: 25ps; */
   font-size:25px;
   font-weight:bold
 
