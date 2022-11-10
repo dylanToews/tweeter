@@ -1,14 +1,10 @@
 $(document).ready(function() {
 
 
-  const escape = function(str) {
-    let div = document.createElement("div");
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  };
+
+  //Creates tweet element html for insertion 
 
   const createTweetElement = function(tweetData) {
-
     let tweetText = tweetData.content.text;
     let output = `
     <article class="tweets-article">
@@ -39,6 +35,10 @@ $(document).ready(function() {
   };
 
 
+
+
+  // Error handling functions 
+
   const createError = function(error) {
     $('#er').slideDown();
     $('#er').html(`
@@ -51,28 +51,44 @@ $(document).ready(function() {
     $('#er').slideUp();
   };
 
-  //<script>alert('uhoh');</script>
+
+
+
+  // Prevent cross-site-scripting via text input
+
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+
+
+  // Handles new tweet on submit via ajax
 
   $('.title-input').on('submit', function(event) {
     event.preventDefault();
-
     let counter = $('.counter').val();
-    if (counter < 140) {
+    if (counter < 140 && counter > 0) {
       $.ajax('/tweets', {
         method: 'POST',
         data: $(this).serialize(),
       })
         .then(function() {
           loadTweets();
-          hideError();
         });
     }
-    if (counter == 140 || counter == null) {
+    hideError();
+    if (counter == 140 || counter == null || counter <= 0) {
       createError();
     }
+    $('#tweet-text').val('');
+    $('.counter').val('140');
   });
 
 
+
+  // Renders and loads existing tweets
 
   const renderTweets = function(tweets) {
     $('.all-tweets').empty();
@@ -83,7 +99,6 @@ $(document).ready(function() {
 
 
   const loadTweets = function() {
-
     $.ajax('/tweets', {
       method: 'GET',
     })
@@ -91,7 +106,6 @@ $(document).ready(function() {
         renderTweets(event.reverse());
       });
   };
-
   loadTweets();
 });
 

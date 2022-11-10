@@ -7,17 +7,19 @@
 }
 
 .title-input {
-  display:flex;
+  display: flex;
   flex-direction: column;
- border-bottom: #FFFFFF
+  margin-top: 25px;
+  border-bottom: #FFFFFF
 }
 
 
 label {
 
   margin-bottom: 15px;
- 
+
 }
+
 .button-counter {
   display: flex;
   border-top: solid 5px;
@@ -28,10 +30,20 @@ label {
   padding-top: 25px;
   margin-bottom: 25px;
 }
+
 button {
   background-color: #4056A1;
   font-size: smaller;
   color: #FFFFFF;
+}
+
+#tweet-text {
+  border: none;
+  background-color: #c5fdff;
+}
+
+#tweet-text:hover {
+  box-shadow: 0 0 11px blue;
 }
 
 .counter {

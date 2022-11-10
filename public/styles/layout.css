@@ -27,6 +27,12 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%
+}
 
 
 main {
@@ -34,20 +40,37 @@ main {
   flex-direction: column;
   width: 90%;
   height: auto;
-
-
 }
 
-/* footer {
-  margin-top: 25px;
+ /* Tablet breakpoint */
+ @media screen and (min-width: 768px) {
 
-} */
-/* font-family: 'Source Sans Pro', sans-serif; 
-  font-family: 'Bungee', cursive;
-  Note: the Bungee font should apply to the Tweeter logo in the nav).*/
+  .header-container {
+    width: 90%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .your-name-and-pic {
+    padding-top: 50px;
+    margin-right: 50px;
+  }
 
+  .container {
+    margin-top: 90px;
+  }
 
+  .tweets-article{
+    background-color: none;
+    background-image: none;
+  }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+ }
+
+ @media screen and (max-width: 767px) {
+  .tweets-article{
+  background-color: #3cc4d6;
+  background-image: url("https://www.transparenttextures.com/patterns/cardboard-flat.png");
+  }
+ }

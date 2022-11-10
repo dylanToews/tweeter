@@ -3,8 +3,12 @@
   flex-direction: column;
   border: 5px solid;
   color: #191816;
-  background-color: #3cc4d6;
-  background-image: url("https://www.transparenttextures.com/patterns/cardboard-flat.png");
+  margin-bottom: 10px;
+ 
+}
+.tweets-article:hover {
+  box-shadow: 0 0 11px blue;
+
 }
 
 .article-header {
@@ -15,6 +19,7 @@
   height: auto;
   
 }
+
 
 .img-name {
   display:flex;
@@ -30,14 +35,6 @@
   margin-right: 10px;
 }
 
-hr {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  size: 10px;
-
-  
-}
 
 
 .article-header p {
@@ -45,6 +42,7 @@ hr {
   /* padding-right: 25ps; */
   font-size:25px;
   font-weight:bold
+
 }
 
 .tweet-content {
@@ -55,7 +53,8 @@ footer  {
   display: flex;
   flex-direction: row;  
   justify-content: space-between;
-  margin: 10px 10px
+  margin: 10px 10px;
+  border-top:solid 5px
 }
 
 

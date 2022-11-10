@@ -12,6 +12,14 @@
   padding-top: 10px;
   background-color: #3cc4d6;
 background-image: url("https://www.transparenttextures.com/patterns/cardboard-flat.png");
+}
 
+#profile-img {
+  height: 200px;
+  width: auto;
+}
+
+#profile-name {
+  font-size: 30px 
 }
 
