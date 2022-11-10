@@ -36,6 +36,16 @@ button {
 
 .counter {
   display: flex;
+}
 
+#er {
+  display: none;
+  justify-content: center;
+  flex-direction: row;
+  border: solid;
+  border-color: red;
+  font-size: medium;
+  color: red;
+  padding: 5px;
 
 }
