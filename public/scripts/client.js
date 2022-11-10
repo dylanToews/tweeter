@@ -32,38 +32,50 @@ $(document).ready(function() {
   };
 
 
-  const createError = function(error){
-    $('#er').slideDown()
+  const createError = function(error) {
+    $('#er').slideDown();
     $('#er').html(`
     <i class="fa-solid fa-triangle-exclamation"></i>
       Birds may fly free, but on tweeter we need you to follow our character guidlines
-      <i class="fa-solid fa-triangle-exclamation"></i>`)
-  }
+      <i class="fa-solid fa-triangle-exclamation"></i>`);
+  };
 
-  
+  const hideError = function(error) {
+    $('#er').slideUp();
+  };
+
 
 
   $('.title-input').on('submit', function(event) {
     event.preventDefault();
 
     let counter = $('.counter').val();
-    console.log(counter);
     if (counter < 140) {
 
       $.ajax('/tweets', {
         method: 'POST',
         data: $(this).serialize()
-      });
+
+      })
+
+        .then(function() {
+          loadTweets();
+          hideError();
+
+        });
 
     }
-    if (counter == 140  || counter == null) {
-      createError()
+    if (counter == 140 || counter == null) {
+      createError();
     }
+
+
   });
 
 
 
   const renderTweets = function(tweets) {
+    $('.all-tweets').empty();
     for (let tweet of tweets) {
       $('.all-tweets').append(createTweetElement(tweet));
     }
@@ -75,8 +87,9 @@ $(document).ready(function() {
     $.ajax('/tweets', {
       method: 'GET',
     })
+
       .then(function(event) {
-        renderTweets(event);
+        renderTweets(event.reverse());
       });
   };
 
