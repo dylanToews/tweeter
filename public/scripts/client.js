@@ -1,8 +1,15 @@
 $(document).ready(function() {
 
 
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = function(tweetData) {
 
+    let tweetText = tweetData.content.text;
     let output = `
     <article class="tweets-article">
         <header class="article-header">
@@ -13,7 +20,7 @@ $(document).ready(function() {
           <p id="profile-tag">${tweetData.user.handle}</p>
         </header>
         <div class="tweet-content">
-          <p id ="content-text">${tweetData.content.text}</p>
+          <p id ="content-text">${escape(tweetText)}</p>
         </div>
         <hr />
         <footer>
@@ -44,32 +51,25 @@ $(document).ready(function() {
     $('#er').slideUp();
   };
 
-
+  //<script>alert('uhoh');</script>
 
   $('.title-input').on('submit', function(event) {
     event.preventDefault();
 
     let counter = $('.counter').val();
     if (counter < 140) {
-
       $.ajax('/tweets', {
         method: 'POST',
-        data: $(this).serialize()
-
+        data: $(this).serialize(),
       })
-
         .then(function() {
           loadTweets();
           hideError();
-
         });
-
     }
     if (counter == 140 || counter == null) {
       createError();
     }
-
-
   });
 
 
@@ -87,7 +87,6 @@ $(document).ready(function() {
     $.ajax('/tweets', {
       method: 'GET',
     })
-
       .then(function(event) {
         renderTweets(event.reverse());
       });
