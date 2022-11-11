@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
 
-
   //Creates tweet element html for insertion 
 
   const createTweetElement = function(tweetData) {
@@ -51,29 +50,13 @@ $(document).ready(function() {
     $('#er').slideUp();
   };
 
-// Navbar functions
-
-const navButton = function(event) {
-
-
-}
-
-// $('.new-tweet').on('btn', function(event) {
-//   event.preventDefault();
-//   console.log('anythng')
-//   $('.button-counter').val(1231321)
-
-// })
-
-$(function(){
-  $('#nav-btn').on('click', function(){
-    $('.new-tweet').slideDown()
-    $('textarea').focus()
-// $('.new-tweet').css("display", "flex")
-
-    // alert('click event');
+  // Navbar function for button controled slide down of text area
+  $(function() {
+    $('#nav-btn').on('click', function() {
+      $('.new-tweet').slideDown();
+      $('textarea').focus();
+    });
   });
-});
 
 
   // Prevent cross-site-scripting via text input
