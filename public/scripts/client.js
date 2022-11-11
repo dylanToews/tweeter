@@ -51,7 +51,29 @@ $(document).ready(function() {
     $('#er').slideUp();
   };
 
+// Navbar functions
 
+const navButton = function(event) {
+
+
+}
+
+// $('.new-tweet').on('btn', function(event) {
+//   event.preventDefault();
+//   console.log('anythng')
+//   $('.button-counter').val(1231321)
+
+// })
+
+$(function(){
+  $('#nav-btn').on('click', function(){
+    $('.new-tweet').slideDown()
+    $('textarea').focus()
+// $('.new-tweet').css("display", "flex")
+
+    // alert('click event');
+  });
+});
 
 
   // Prevent cross-site-scripting via text input
