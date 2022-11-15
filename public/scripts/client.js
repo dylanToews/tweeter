@@ -42,7 +42,7 @@ $(document).ready(function() {
     $('#er').slideDown();
     $('#er').html(`
     <i class="fa-solid fa-triangle-exclamation"></i>
-      Birds may fly free, but on tweeter we need you to follow our character guidlines
+      Birds may fly free, but on tweeter we need you to follow our character guidlines of 140 characters or less
       <i class="fa-solid fa-triangle-exclamation"></i>`);
   };
 
@@ -74,7 +74,7 @@ $(document).ready(function() {
   $('.title-input').on('submit', function(event) {
     event.preventDefault();
     let counter = $('.counter').val();
-    if (counter < 140 && counter > 0) {
+    if (counter < 140 && counter >= 0) {
       $.ajax('/tweets', {
         method: 'POST',
         data: $(this).serialize(),
@@ -84,7 +84,7 @@ $(document).ready(function() {
         });
     }
     hideError();
-    if (counter == 140 || counter == null || counter <= 0) {
+    if (counter == 140 || counter == null || counter < 0) {
       createError();
     }
     $('#tweet-text').val('');

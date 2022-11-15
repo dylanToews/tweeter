@@ -9,7 +9,7 @@ $(document).ready(function() {
     if ($('.counter').val() < 0) {
       $('.counter').css("color", "red");
     }
-    if ($('.counter').val() > 0) {
+    if ($('.counter').val() >= 0) {
       $('.counter').css("color", "rgb(182, 176, 167)");
     }
   });
